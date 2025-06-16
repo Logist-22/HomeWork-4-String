@@ -71,6 +71,7 @@ Str& Str:: operator=(Str& other)
 {
 	if (this != &other)
 	{
+		delete[] this->str;
 		this->str = new char[strlen(other.str) + 1];
 		strcpy_s (this->str,  strlen(other.str)+1, other.str);		
 	}
